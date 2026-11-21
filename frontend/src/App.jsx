@@ -7,6 +7,7 @@ import LeadPipelinePage from './pages/LeadPipeline/index'
 import EnrichmentQueuePage from './pages/EnrichmentQueue/index'
 import KitchenSinkPage from './pages/_Kitchen/index'
 import ApprovalPage from './pages/CampaignManager/Approval'
+import DraftEditorPage from './pages/CampaignManager/DraftEditorPage'
 import History from './pages/EnrichmentQueue/History'
 
 function PlaceholderPage({ title, description, roleRequirement }) {
@@ -149,11 +150,7 @@ export default function App() {
             path="/campaigns"
             element={
               currentUser ? (
-                <PlaceholderPage
-                  title="Campaign Manager & AI Draft Review (FE-21, FE-22)"
-                  description="Review audience qualification, inspect Gemini Flash drafts, and approve outreach."
-                  roleRequirement="campaign_manager, admin"
-                />
+                      <DraftEditorPage />
               ) : (
                 <Navigate to="/login" replace />
               )
